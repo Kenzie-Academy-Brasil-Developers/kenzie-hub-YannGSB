@@ -1,0 +1,92 @@
+.title {
+  font-family: var(--font-primary);
+  font-weight: 700;
+
+  &.one {
+    font-size: 1.125rem;
+  }
+
+  &.two {
+    font-size: 1rem;
+  }
+}
+
+.headline {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 0.75rem;
+
+  &.bold {
+    font-weight: 700;
+  }
+}
+
+.paragraph {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  font-size: 2rem;
+}
+
+.helperText {
+  font-family: var(--font-primary);
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: var(--grey-1);
+}
+
+.line {
+  height: 0px;
+  border: none;
+  border-top: 1px solid var(--grey-3);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.primaryFocus {
+  color: var(--color-primary-focus);
+}
+
+.primaryNegative {
+  color: var(--color-primary-negative);
+}
+
+.grey4 {
+  color: var(--grey-4);
+}
+
+.grey3 {
+  color: var(--grey-3);
+}
+
+.grey2 {
+  color: var(--grey-2);
+}
+
+.grey1 {
+  color: var(--grey-1);
+}
+
+.grey0 {
+  color: var(--grey-0);
+}
+
+.white {
+  color: var(--white);
+}
+
+.success {
+  color: var(--success);
+}
+
+.negative {
+  color: var(--negative);
+}
