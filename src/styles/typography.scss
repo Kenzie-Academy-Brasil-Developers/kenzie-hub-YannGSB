@@ -34,6 +34,19 @@
   font-size: 2rem;
 }
 
+.helperText {
+  font-family: var(--font-primary);
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: var(--grey-1);
+}
+
+.line {
+  height: 0px;
+  border: none;
+  border-top: 1px solid var(--grey-3);
+}
+
 .primary {
   color: var(--color-primary);
 }
