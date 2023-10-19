@@ -1,11 +1,6 @@
 import axios from "axios";
 
-export const LoginApi = axios.create({
-  baseURL: "https://kenziehub.herokuapp.com/sessions",
-  timeout: 5 * 1000,
-});
-
-export const RegisterApi = axios.create({
-  baseURL: "https://kenziehub.herokuapp.com/users",
+export const api = axios.create({
+  baseURL: "https://kenziehub.herokuapp.com/",
   timeout: 5 * 1000,
 });
