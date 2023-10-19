@@ -1,0 +1,10 @@
+.formContainer {
+  border-radius: 0.25rem;
+  background-color: var(--grey-3);
+  box-shadow: 0px 0.25rem 2.5rem -0.625rem rgba(0, 0, 0, 0.25);
+  padding: 2.1057rem 1.103rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.625rem;
+}
