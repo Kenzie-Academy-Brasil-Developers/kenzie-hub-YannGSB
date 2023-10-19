@@ -21,6 +21,16 @@
     }
   }
 
+  &.negative {
+    background-color: var(--color-primary);
+    border: 0.075rem solid var(--color-primary);
+
+    &:hover {
+      background-color: var(--color-primary-negative);
+      border: 0.075rem solid var(--color-primary-negative);
+    }
+  }
+
   &.disabled {
     background-color: var(--grey-1);
     border: 0.075rem solid var(--grey-1);
@@ -29,6 +39,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &.small {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+    }
 
     &:hover {
       background-color: var(--grey-2);
