@@ -3,3 +3,16 @@
   max-width: 305px;
   margin: 0 auto;
 }
+
+.containerFlex {
+  width: 95%;
+  max-width: 305px;
+  margin: 0 auto;
+}
+
+@media (min-width: 767px) {
+  .containerFlex {
+    width: 70%;
+    max-width: 1400px;
+  }
+}
