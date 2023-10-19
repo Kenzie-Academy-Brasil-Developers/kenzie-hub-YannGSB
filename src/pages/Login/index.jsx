@@ -4,7 +4,7 @@ import { LoginForm } from "../../components/forms/LoginForm/index.jsx";
 export const Login = ({ setUser }) => {
   return (
     <>
-      <Header />
+      <Header isLoginPage={true} />
       <main className="container">
         <LoginForm setUser={setUser} />
       </main>
