@@ -1,12 +1,32 @@
+import { Header } from "../../components/Header";
+import styles from "./style.module.scss";
+
 export const Dashboard = ({ user, userLogout }) => {
-  console.log(user);
   return (
-    <main>
-      {/* não sei se é p ou se vai no header isso a baixo e provavelmente não vai no main, não consegui encostar nessa página direito 
-      
-      OBS: o userLogout vai precisar ser mandando pro header caso o botão de sair vá no header ou caso ele fique aqui é só passar pro botão*/}
-      <p>{user?.name}</p>
-      <p>{user?.course_module}</p>
-    </main>
+    <>
+      <Header isLoginPage={false}>
+        <button onClick={userLogout} className="btn disabled small">
+          Sair
+        </button>
+      </Header>
+      <hr className="line" />
+      <div className="containerFlex">
+        <section className={styles.userInfo}>
+          <h1 className="title one grey0">Olá, {user?.name}</h1>
+          <p className="headline grey1">{user?.course_module}</p>
+        </section>
+      </div>
+      <hr className="line" />
+      <div className="containerFlex">
+        <main className={styles.mainContainer}>
+          <h1 className="title one grey0">
+            Que pena! Estamos em desenvolvimento 😞
+          </h1>
+          <p className="paragraph white">
+            Nossa aplicação está em desenvolvimento, em breve teremos novidades
+          </p>
+        </main>
+      </div>
+    </>
   );
 };
