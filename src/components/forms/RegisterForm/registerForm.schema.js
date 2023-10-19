@@ -21,8 +21,10 @@ export const registerFormSchema = z
     bio: z
       .string()
       .min(4, "A bio precisa conter pelo menos quatro caracteres."),
-      contact: z.string(),
-      course_module: z.string(),
+    contact: z
+      .string()
+      .min(8, "O contato precisa conter pelo menos oito caracteres"),
+    course_module: z.string(),
   })
   .refine(({ password, confirmPassword }) => password === confirmPassword, {
     message: "As senhas não correspondem",
