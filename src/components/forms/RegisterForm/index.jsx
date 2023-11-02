@@ -2,11 +2,9 @@ import { useForm } from "react-hook-form";
 import { Input } from "../Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerFormSchema } from "./registerForm.schema.js";
-import { api } from "../../../services/api";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import { toast } from "react-toastify";
+import { UserContext } from "../../../providers/UserContext";
 
 export const RegisterForm = () => {
   const {
@@ -17,25 +15,11 @@ export const RegisterForm = () => {
     resolver: zodResolver(registerFormSchema),
   });
 
-  const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
-
-  const userRegister = async (payLoad) => {
-    try {
-      setLoading(true);
-      await api.post("/users", payLoad);
-      navigate("/");
-      toast.success("Cadastro realizado com sucesso!");
-    } catch (error) {
-      toast.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { userRegister } = useContext(UserContext);
 
   const submit = (payLoad) => {
-    userRegister(payLoad);
+    userRegister(payLoad, setLoading);
   };
 
   return (

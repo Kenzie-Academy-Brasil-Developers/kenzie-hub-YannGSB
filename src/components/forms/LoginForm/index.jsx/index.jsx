@@ -1,14 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Input } from "../../Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { loginFormSchema } from "../loginForm.schema";
-import { useState } from "react";
-import { api } from "../../../../services/api";
+import { useContext, useState } from "react";
 import styles from "./style.module.scss";
-import { toast } from "react-toastify";
+import { UserContext } from "../../../../providers/UserContext";
 
-export const LoginForm = ({ setUser }) => {
+export const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -17,27 +16,12 @@ export const LoginForm = ({ setUser }) => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const [loading, SetLoading] = useState(false);
+  const { userLogin } = useContext(UserContext);
 
-  const navigate = useNavigate();
-
-  const userLogin = async (payLoad) => {
-    try {
-      SetLoading(true);
-      const { data } = await api.post("/sessions", payLoad);
-      localStorage.setItem("@KENZIEHUBTOKEN", data.token);
-      setUser(data.user);
-      toast.success("Login realizado com sucesso");
-      navigate("/dashboard");
-    } catch (error) {
-      toast.error("Credenciais inválidas");
-    } finally {
-      SetLoading(false);
-    }
-  };
+  const [loading, setLoading] = useState(false);
 
   const submit = (payLoad) => {
-    userLogin(payLoad);
+    userLogin(payLoad, setLoading);
   };
 
   return (

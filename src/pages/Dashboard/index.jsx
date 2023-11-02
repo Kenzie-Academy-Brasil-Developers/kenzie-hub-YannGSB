@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Header } from "../../components/Header";
 import styles from "./style.module.scss";
+import { UserContext } from "../../providers/UserContext";
 
-export const Dashboard = ({ user, userLogout }) => {
+export const Dashboard = () => {
+  const { user, userLogout } = useContext(UserContext);
+
   return (
     <>
       <Header isLoginPage={false}>
