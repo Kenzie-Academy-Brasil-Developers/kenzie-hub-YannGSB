@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import { Dashboard, ErrorPage, Login, Register } from "../pages";
 import { PrivateRoutes } from "./PrivateRoutes";
 import { LoadingPage } from "../pages/LoadingPage";
-import { Explore } from "../pages/Explore";
 import { PublicRoutes } from "./PublicRoutes";
 
 export default () => {
