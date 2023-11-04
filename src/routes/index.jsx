@@ -8,7 +8,6 @@ import { PublicRoutes } from "./PublicRoutes";
 export default () => {
   return (
     <Routes>
-
       <Route element={<PublicRoutes />}>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -16,12 +15,10 @@ export default () => {
 
       <Route element={<PrivateRoutes />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/explore" element={<Explore />} />
       </Route>
 
       <Route path="*" element={<ErrorPage />} />
       <Route path="/loading" element={<LoadingPage />} />
-
     </Routes>
   );
 };
