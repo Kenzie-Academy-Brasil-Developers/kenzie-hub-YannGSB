@@ -1,12 +1,15 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Dashboard, ErrorPage, Login, Register } from "../pages";
+import { PrivateRoutes } from "./PrivateRoutes";
 
 export default () => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route element={<PrivateRoutes />}>
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Route>
       <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
