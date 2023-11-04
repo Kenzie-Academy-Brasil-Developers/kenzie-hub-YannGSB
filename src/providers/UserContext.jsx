@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services/api.js";
 
+const pathName = window.location.pathname;
+
 export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
@@ -22,7 +24,7 @@ export const UserProvider = ({ children }) => {
           },
         });
         setUser(data);
-        navigate("/dashboard");
+        navigate(pathName);
       } catch (error) {
         toast.error(error);
       } finally {
