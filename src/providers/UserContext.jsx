@@ -7,6 +7,7 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("@KENZIEHUBTOKEN");
@@ -14,6 +15,7 @@ export const UserProvider = ({ children }) => {
 
     const getUser = async () => {
       try {
+        setLoading(true);
         const { data } = await api.get(`/users/${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -21,7 +23,11 @@ export const UserProvider = ({ children }) => {
         });
         setUser(data);
         navigate("/dashboard");
-      } catch (error) {}
+      } catch (error) {
+        toast.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     getUser();
@@ -68,27 +74,10 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ user, userLogin, userLogout, userRegister }}>
+    <UserContext.Provider
+      value={{ user, userLogin, userLogout, userRegister, loading }}
+    >
       {children}
     </UserContext.Provider>
   );
 };
-
-// const [list, setList] = useState([]);
-
-// const addToList = (payLoad) => {
-//   const newList = { ...payLoad, id: crypto.randomUUID() };
-//   setList([...list, newList]);
-// };
-
-// const removeFromList = (itemId) => {
-//   const newList = list.filter(({ id }) => id !== itemId);
-//   setList(newList);
-// };
-
-//   return (
-//     <UserContext.Provider value={{ list, addToList, removeFromList }}>
-//       {children}
-//     </UserContext.Provider>
-//   );
-// };

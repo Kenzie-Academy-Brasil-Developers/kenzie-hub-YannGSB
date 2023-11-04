@@ -1,6 +1,7 @@
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Dashboard, ErrorPage, Login, Register } from "../pages";
 import { PrivateRoutes } from "./PrivateRoutes";
+import { LoadingPage } from "../pages/LoadingPage";
 
 export default () => {
   return (
@@ -11,6 +12,7 @@ export default () => {
         <Route path="/dashboard" element={<Dashboard />} />
       </Route>
       <Route path="*" element={<ErrorPage />} />
+      <Route path="/loading" element={<LoadingPage />} />
     </Routes>
   );
 };
