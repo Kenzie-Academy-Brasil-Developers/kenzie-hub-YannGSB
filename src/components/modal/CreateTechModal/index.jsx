@@ -3,6 +3,7 @@ import { TechContext } from "../../../providers/TechContext";
 import { useContext } from "react";
 import { Input } from "../forms/Input";
 import { Select } from "../forms/Select";
+import styles from "./style.module.scss";
 
 export const CreateTechModal = () => {
   const { addTech, setModalVisible } = useContext(TechContext);
@@ -15,11 +16,11 @@ export const CreateTechModal = () => {
   };
 
   return (
-    <div role="dialog">
-      <div>
+    <div className={styles.createTechCard} role="dialog">
+      <div className={styles.cardHeader}>
         <h3 className="title three grey0">Cadastrar Tecnologia</h3>
         <button
-          className="btn disabled small"
+          className={`btn small ${styles.closeBtn}`}
           type="button"
           onClick={() => {
             setModalVisible(false);
@@ -28,7 +29,7 @@ export const CreateTechModal = () => {
           X
         </button>
       </div>
-      <form onSubmit={handleSubmit(submit)}>
+      <form className={styles.formContainer} onSubmit={handleSubmit(submit)}>
         <Input
           label="Nome"
           {...register("title")}
@@ -37,7 +38,7 @@ export const CreateTechModal = () => {
         />
         <Select {...register("status")} label="Selecionar status" />
 
-        <button type="submit" className="btn primary">
+        <button type="submit" className={`btn primary ${styles.submitBtn}`}>
           Cadastrar Tecnologia
         </button>
       </form>
