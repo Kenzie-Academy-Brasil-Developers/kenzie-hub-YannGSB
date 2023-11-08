@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Header } from "../../components/Header";
 import styles from "./style.module.scss";
 import { UserContext } from "../../providers/UserContext";
+import { TechList } from "../../components/TechList";
 
 export const Dashboard = () => {
   const { user, userLogout } = useContext(UserContext);
@@ -23,12 +24,7 @@ export const Dashboard = () => {
       <hr className="line" />
       <div className="containerFlex">
         <main className={styles.mainContainer}>
-          <h1 className="title one grey0">
-            Que pena! Estamos em desenvolvimento 😞
-          </h1>
-          <p className="paragraph white">
-            Nossa aplicação está em desenvolvimento, em breve teremos novidades
-          </p>
+          <TechList />
         </main>
       </div>
     </>
