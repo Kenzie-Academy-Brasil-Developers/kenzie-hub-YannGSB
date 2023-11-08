@@ -1,7 +1,8 @@
 .userInfo {
   display: flex;
 
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 22px;
   margin-top: 40px;
   margin-bottom: 40px;

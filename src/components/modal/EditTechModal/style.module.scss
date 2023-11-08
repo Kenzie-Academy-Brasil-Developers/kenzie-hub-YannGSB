@@ -1,0 +1,74 @@
+.editTechModal {
+  position: fixed;
+  top: 30%;
+  left: 0%;
+}
+
+.cardTitle {
+  display: flex;
+}
+
+.titleCard {
+  background-color: var(--grey-2);
+  display: flex;
+  width: 369px;
+  padding: 0px 12px 12px 12px;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: baseline;
+  height: 50px;
+  margin-bottom: -2px;
+}
+
+.closeBtn {
+  border: none;
+  max-width: 30px;
+  background-color: var(--grey-2);
+}
+
+.formContainer {
+  background-color: var(--grey-3);
+  display: flex;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.submitBtn {
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 424px) {
+  .editTechModal {
+    top: 30%;
+    left: 4%;
+  }
+}
+
+@media (min-width: 767px) {
+  .editTechModal {
+    top: 30%;
+    left: 25%;
+  }
+}
+
+@media (min-width: 1023px) {
+  .editTechModal {
+    top: 30%;
+    left: 33%;
+  }
+}
+
+@media (min-width: 1339px) {
+  .editTechModal {
+    top: 30%;
+    left: 40%;
+  }
+}
+
+@media (min-width: 2559px) {
+  .editTechModal {
+    top: 30%;
+    left: 43%;
+  }
+}

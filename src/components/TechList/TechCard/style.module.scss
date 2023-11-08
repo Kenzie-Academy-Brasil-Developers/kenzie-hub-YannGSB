@@ -1,0 +1,85 @@
+.listItem {
+  width: 15.625rem;
+  height: 4.7639rem;
+  border-radius: 0.25rem;
+  background-color: #121214;
+  padding: 13px;
+}
+
+.titleContainer {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paragraphContainer {
+  display: flex;
+  align-items: center;
+}
+
+.editBtn {
+  background-color: #121214;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  background-color: #121214;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (min-width: 767px) {
+  .listItem {
+    width: 28.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .infoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .itemTitle {
+    display: flex;
+    align-items: center;
+  }
+
+  .titleContainer {
+    display: flex;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  .listItem {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1439px) {
+  .listItem {
+    width: 57rem;
+  }
+}
+
+@media (min-width: 1919px) {
+  .listItem {
+    width: 75rem;
+  }
+}
+@media (min-width: 2559px) {
+  .listItem {
+    width: 80rem;
+  }
+}
