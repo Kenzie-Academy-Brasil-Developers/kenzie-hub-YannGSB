@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { TechContext } from "../../providers/TechContext";
 import { TechCard } from "./TechCard";
-import { CreateTechModal } from "../modal/createTechModal";
+import { CreateTechModal } from "../modal/CreateTechModal";
 import { EditTechModal } from "../modal/EditTechModal";
 
 export const TechList = () => {
